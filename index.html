@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventListener</title>
+</head>
+
+<body>
+    <button class="btn">Add Textbox</button>
+
+    <script>
+        const addbutton = document.querySelector(".btn");
+        addbutton.addEventListener("click", addtextbox);
+
+        function addtextbox() {
+            const new_label = document.createElement("label");
+            new_label.textContent = "Enter your username";
+            const new_textbox = document.createElement("input");
+            new_textbox.setAttribute("type", "text");
+            const bre = document.createElement("br");
+            const brel = document.createElement("br");
+            document.body.appendChild(bre);
+            document.body.appendChild(brel);
+            document.body.appendChild(new_label);
+            document.body.appendChild(new_textbox);
+            const abutton = document.createElement("button");
+            const ttext = document.createTextNode("Add");
+            abutton.appendChild(ttext);
+            abutton.oneclick = addtextbox;
+            document.body.appendChild(abutton);
+            const rbutton = document.createElement("buttton");
+            const rtext = document.createTextNode("remove")
+            rbutton.appendChild(rtext);
+            rbutton.oneclick = function () {
+                new_label.remove(),
+                    new_textbox.remove();
+                bre.remove(),
+                    brek.remove(),
+                    abutton.remove(),
+                    rbutton.remove()
+            }
+
+        }
+    </script>
+</body>
+
+</html>
